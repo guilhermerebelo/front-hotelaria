@@ -1,2 +1,1 @@
-Start Angular JS & Webpack
-===========
+Front end projeto de hotelaria para o matéria de banco de dados da UFSC
