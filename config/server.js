@@ -4,7 +4,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
     entry: './test/app/app.js',
     output: {
-        filename: 'componente-modelo.js'
+        filename: 'hotelaria.js'
     },
     module: {
         rules: [
@@ -26,7 +26,7 @@ module.exports = {
             inject: 'body'
         }),
         new ExtractTextPlugin({
-            filename: 'componente-modelo.css',
+            filename: 'hotelaria.css',
             allChunks: true
         })
     ],

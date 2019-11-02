@@ -1,21 +1,21 @@
 'use strict';
 
-module.exports = ComponenteModeloDirective;
+module.exports = hotelariaDirective;
 
-ComponenteModeloDirective.$inject = [];
+hotelariaDirective.$inject = [];
 
-function ComponenteModeloDirective() {
+function hotelariaDirective() {
     return {
         restrict: 'E',
-        template: require('./componente-modelo.directive.html'),
+        template: require('./hotelaria.directive.html'),
         scope: {},
-        controller: ComponenteModeloController,
+        controller: hotelariaController,
         controllerAs: 'vm'
     };
 }
 
-ComponenteModeloController.$inject = [];
-function ComponenteModeloController() {
+hotelariaController.$inject = [];
+function hotelariaController() {
     var vm = this;
 
     vm.titulo = 'Componente modelo';

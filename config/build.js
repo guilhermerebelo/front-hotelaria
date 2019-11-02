@@ -4,12 +4,12 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: {
-        'componente-modelo': './src/index.js'
+        'hotelaria': './src/index.js'
     },
     output: {
         path: __dirname + '/../dist',
-        filename: 'componente-modelo.js',
-        library: 'componenteModelo',
+        filename: 'hotelaria.js',
+        library: 'hotelaria',
         libraryTarget: 'umd'
     },
     module: {
@@ -39,7 +39,7 @@ module.exports = {
         // Extract css files
         // Disabled when in test mode or not in build mode
         new ExtractTextPlugin({
-            filename: 'componente-modelo.css',
+            filename: 'hotelaria.css',
             allChunks: true
         })
     ],
