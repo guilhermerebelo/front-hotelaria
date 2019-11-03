@@ -4,7 +4,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: {
-        'hotelaria': './src/index.js'
+        'hotelaria': './app/src/index.js'
     },
     output: {
         path: __dirname + '/../dist',
