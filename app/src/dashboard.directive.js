@@ -4,10 +4,9 @@ var _ = require('lodash');
 
 module.exports = directive;
 
-directive.$inject = [];
-
 var Chart = require('chart.js');
 
+directive.$inject = [];
 function directive() {
     return {
         restrict: 'E',
@@ -88,10 +87,10 @@ function controller(DashboardService, $q) {
         new Chart(document.getElementById('funcionarioMaisLocacoesMes').getContext('2d'), {
             type: 'line',
             data: {
-                labels: _.map(data, function (value) { return value[1]}),
+                labels: _.map(data, function (value) { return value[1] }),
                 datasets: [
                     {
-                        label: "Funcionários que mais fizeram locações em " +  data[0][2],
+                        label: "Funcionários que mais fizeram locações em " + data[0][2],
                         fill: false,
                         lineTension: 0.1,
                         backgroundColor: "rgba(75,192,192,0.4)",
@@ -178,9 +177,9 @@ function controller(DashboardService, $q) {
     });
 
     $q.all([
-            DashboardService.faturamentoUltimosDozeMeses(),
-            DashboardService.faturamentoAnual()
-    ]).then(function(data) {
+        DashboardService.faturamentoUltimosDozeMeses(),
+        DashboardService.faturamentoAnual()
+    ]).then(function (data) {
         vm.faturamentoProdutos = data[0] - data[1];
     })
 }
