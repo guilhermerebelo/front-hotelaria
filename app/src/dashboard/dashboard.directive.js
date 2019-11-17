@@ -170,17 +170,17 @@ function controller(DashboardService, $q) {
     });
 
     DashboardService.faturamentoAnual().then(function (data) {
-        vm.faturamentoAnualQuartos = data[0];
+        vm.faturamentoAnualQuartos = "R$" + data[0] + ",00";
     });
 
     DashboardService.faturamentoUltimosDozeMeses().then(function (data) {
-        vm.faturamentoTotal = data[0];
+        vm.faturamentoTotal = "R$" + data[0] + ",00";
     });
 
     $q.all([
             DashboardService.faturamentoUltimosDozeMeses(),
             DashboardService.faturamentoAnual()
     ]).then(function(data) {
-        vm.faturamentoProdutos = data[0] - data[1];
+        vm.faturamentoProdutos = "R$" + (data[0] - data[1]) + ",00";
     })
 }

@@ -47,7 +47,7 @@ function Service(Restangular) {
 
     function faturamentoAnual() {
         return Restangular
-            .one(PATH, "faturamento-anual")
+            .one(PATH, "faturamento-anual-quartos")
             .get()
             .then(Restangular.stripRestangular);
     }
