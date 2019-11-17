@@ -16,9 +16,9 @@
     <br><br><br>
     <div class="row">
         <div class="col-md-6">
-            <h4>Funcionários que fizeram mais locações / 6 meses</h4>
+            <h4>Funcionários que fizeram mais locações/mês</h4>
             <div class="row" style="margin-left: -70px;">
-                <div><canvas id="funcionarioMaisLocacoesUltimosSeisMeses" width="600" height="400"></canvas></div>
+                <div><canvas id="funcionarioMaisLocacoesMes" width="600" height="400"></canvas></div>
             </div>
         </div>
         <div class="col-md-4">
@@ -42,19 +42,19 @@
             <div class="col-md-12">
                 <h4 style="margin-bottom: 0px;">Por quartos</h4>
                 <p style="width: 100%; font-size: 40px;">
-                    {{vm.faturamentoAnualQuartos}}
+                    {{vm.faturamentoAnualQuartos | currency:'R$'}}
                 </p>
             </div>
             <div class="col-md-12">
                 <h4 style="margin-bottom: 0px;">Por produtos</h4>
                 <p style="width: 100%; font-size: 40px;">
-                    {{vm.faturamentoProdutos}}
+                    {{vm.faturamentoProdutos| currency:'R$'}}
                 </p>
             </div>
             <div class="col-md-12">
                 <h4 style="margin-bottom: 0px;">Total</h4>
                 <p style="width: 100%; font-size: 40px;">
-                    {{vm.faturamentoTotal}}
+                    {{vm.faturamentoTotal| currency:'R$'}}
                 </p>
             </div>
         </div>

@@ -84,14 +84,14 @@ function controller(DashboardService, $q) {
         });
     });
 
-    DashboardService.funcionarioMaisLocacoesUltimosSeisMeses().then(function (data) {
-        new Chart(document.getElementById('funcionarioMaisLocacoesUltimosSeisMeses').getContext('2d'), {
+    DashboardService.funcionarioMaisLocacoesMes().then(function (data) {
+        new Chart(document.getElementById('funcionarioMaisLocacoesMes').getContext('2d'), {
             type: 'line',
             data: {
-                labels: _.map(data, function (value) { return value[2] + " / " + value[1].split(' ')[0]}),
+                labels: _.map(data, function (value) { return value[1]}),
                 datasets: [
                     {
-                        label: "Funcionários que mais fizeram locações",
+                        label: "Funcionários que mais fizeram locações em " +  data[0][2],
                         fill: false,
                         lineTension: 0.1,
                         backgroundColor: "rgba(75,192,192,0.4)",
@@ -170,17 +170,17 @@ function controller(DashboardService, $q) {
     });
 
     DashboardService.faturamentoAnual().then(function (data) {
-        vm.faturamentoAnualQuartos = "R$" + data[0] + ",00";
+        vm.faturamentoAnualQuartos = data[0];
     });
 
     DashboardService.faturamentoUltimosDozeMeses().then(function (data) {
-        vm.faturamentoTotal = "R$" + data[0] + ",00";
+        vm.faturamentoTotal = data[0];
     });
 
     $q.all([
             DashboardService.faturamentoUltimosDozeMeses(),
             DashboardService.faturamentoAnual()
     ]).then(function(data) {
-        vm.faturamentoProdutos = "R$" + (data[0] - data[1]) + ",00";
+        vm.faturamentoProdutos = data[0] - data[1];
     })
 }

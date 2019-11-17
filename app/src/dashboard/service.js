@@ -9,7 +9,7 @@ function Service(Restangular) {
     return {
         melhoresClientes: melhoresClientes,
         totalHospedesAno: totalHospedesAno,
-        funcionarioMaisLocacoesUltimosSeisMeses: funcionarioMaisLocacoesUltimosSeisMeses,
+        funcionarioMaisLocacoesMes: funcionarioMaisLocacoesMes,
         faturamentoProdutoMes: faturamentoProdutoMes,
         faturamentoAnual: faturamentoAnual,
         faturamentoUltimosDozeMeses: faturamentoUltimosDozeMeses,
@@ -31,9 +31,9 @@ function Service(Restangular) {
             .then(Restangular.stripRestangular);
     }
 
-    function funcionarioMaisLocacoesUltimosSeisMeses() {
+    function funcionarioMaisLocacoesMes() {
         return Restangular
-            .one(PATH, "funcionario-mais-locacoes-ultimos-seis-meses")
+            .one(PATH, "funcionario-mais-locacoes-mes")
             .get()
             .then(Restangular.stripRestangular);
     }
