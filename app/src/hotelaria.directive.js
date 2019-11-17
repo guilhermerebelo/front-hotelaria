@@ -4,58 +4,10 @@ var _ = require('lodash');
 
 var MENU_OPCOES = [
     {
-        key: "ALUGUEL",
-        label: "ALUGUEL",
+        key: "DASHBOARD",
+        label: "GRÁFICOS",
         ativo: true,
         diretiva: '<aluguel><aluguel>'
-    },
-    {
-        key: "PRODUTOS",
-        label: "PRODUTOS",
-        ativo: false,
-        diretiva: '<produto><produto>'
-
-    },
-    {
-        key: "PESSOAS_FISICAS",
-        label: "PESSOAS FÍSICAS",
-        ativo: false,
-        diretiva: '<pessoa-fisica><pessoa-fisica>'
-
-    },
-    {
-        key: "FUNCIONARIOS",
-        label: "FUNCIONÁRIOS",
-        ativo: false,
-        diretiva: '<funcionario><funcionario>'
-
-    },
-    {
-        key: "HOSPEDES",
-        label: "HOSPEDES",
-        ativo: false,
-        diretiva: '<hospede><hospede>'
-
-    },
-    {
-        key: "QUARTO",
-        label: "QUARTO",
-        ativo: false,
-        diretiva: '<quarto><quarto>'
-
-    },
-    {
-        key: "CATEGORIA_QUARTO",
-        label: "CATEGORIA QUARTO",
-        ativo: false,
-        diretiva: '<categoria-quarto><categoria-quarto>'
-
-    },
-    {
-        key: "HOTEL",
-        label: "HOTEL",
-        ativo: false,
-        diretiva: '<hotel><hotel>'
     }
 ]
 
@@ -77,7 +29,7 @@ hotelariaController.$inject = [];
 function hotelariaController() {
     var vm = this;
 
-    vm.selecionado = "ALUGUEL";
+    vm.selecionado = "DASHBOARD";
     vm.menuOpcoes = MENU_OPCOES;
 
     vm.selecionarItemMenu = selecionarItemMenu;

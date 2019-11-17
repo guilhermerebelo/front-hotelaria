@@ -1,19 +1,12 @@
 var angular = require('angular');
 
 require('./hotelaria.css');
+// require('chart.js')
 
 module.exports = angular
     .module('hotelaria', [
         require('restangular'),
-
-        require('./aluguel/index'),
-        require('./categoriaquarto/index'),
-        require('./funcionario/index'),
-        require('./hospede/index'),
-        require('./hotel/index'),
-        require('./pessoafisica/index'),
-        require('./produto/index'),
-        require('./quarto/index')
+        require('./dashboard'),
     ])
     .config(function(RestangularProvider){
         RestangularProvider.setBaseUrl('http://localhost:8080/hotel/api')

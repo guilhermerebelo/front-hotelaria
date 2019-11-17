@@ -1,5 +1,6 @@
 var angular = require('angular');
 
 module.exports = angular
-    .module('quarto', [])
-    .directive('quarto', require('./quarto.directive')).name;
+    .module('dashboard', [])
+    .factory('DashboardService', require('./service'))
+    .directive('dashboard', require('./dashboard.directive')).name;

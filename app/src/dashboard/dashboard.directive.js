@@ -1,11 +1,15 @@
+'use strict'
+
 module.exports = directive;
 
 directive.$inject = [];
 
+var Chart = require('chart.js');
+
 function directive() {
     return {
         restrict: 'E',
-        template: require('./quarto.directive.html'),
+        template: require('./dashboard.directive.html'),
         scope: {},
         bindToController: {},
         controller: controller,
@@ -13,58 +17,40 @@ function directive() {
     };
 }
 
-controller.$inject = [];
-function controller() {
+controller.$inject = ['DashboardService'];
+function controller(DashboardService) {
     var vm = this;
 
-    var PATH = 'tipo-quarto';
+    DashboardService.melhoresClientes().then(function(data) {
+        vm.melhoresClientes = data;
+    });
 
-    vm.listagem = [];
+    DashboardService.totalHospedesAno().then(function(data) {
+        vm.totalHospedesAno = data;
+    });
 
-    vm.salvar = salvar;
-    vm.buscar = buscar;
-    vm.listarTudo = listarTudo;
-    vm.remover = remover;
+    DashboardService.funcionarioMaisLocacoesUltimosSeisMeses().then(function(data) {
+        vm.funcionarioMaisLocacoesUltimosSeisMeses = data;
+    });
 
-    listarTudo();
+    DashboardService.faturamentoProdutoMes().then(function(data) {
+        vm.faturamentoProdutoMes = data;
+    });
 
-    function salvar() {
-        (vm.categoriaQuarto.id
-            ? Restangular.one(PATH, vm.categoriaQuarto.id).customPUT(vm.categoriaQuarto)
-            : Restangular.all(PATH).customPOST(vm.categoriaQuarto))
-            .then(remover)
-            .then(listarTudo);
+    DashboardService.faturamentoAnual().then(function(data) {
+        vm.faturamentoAnual = data;
+    });
 
-        function remover() {
-            delete vm.categoriaQuarto
-        }
-    }
+    DashboardService.faturamentoUltimosDozeMeses().then(function(data) {
+        vm.faturamentoUltimosDozeMeses = data;
+    });
 
-    function buscar(id) {
-        Restangular
-            .one(PATH, id)
-            .get()
-            .then(function (data) {
-                vm.categoriaQuarto = data;
-                //abrir colapse
-            });
-    }
+    DashboardService.faturamentoAnualCategoriaQuarto().then(function(data) {
+        vm.faturamentoAnualCategoriaQuarto = data;
+    });
 
-    function listarTudo() {
-        Restangular
-            .one(PATH)
-            .get()
-            .then(list);
-
-            function list(data) {
-                vm.listagem = data.content;
-            }
-    }
-
-    function remover(id) {
-        Restangular
-            .one(PATH, id)
-            .remove()
-            .then(listarTudo);
-    }
+    var melhoresClientes = document.getElementById('melhoresClientes').getContext('2d');
+    var chart = new Chart(melhoresClientes, {
+        type: 'line'             
+    });
 }

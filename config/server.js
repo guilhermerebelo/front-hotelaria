@@ -32,7 +32,8 @@ module.exports = {
         })
     ],
     externals: {
-        angular: 'angular'
+        angular: 'angular',
+        moment: 'moment'
     },
     devtool: '#source-map',
     devServer: {
