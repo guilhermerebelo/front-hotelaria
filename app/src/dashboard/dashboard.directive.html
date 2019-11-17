@@ -1,23 +1,63 @@
-<div class="container">
-<div class="row">
-    <div><canvas id="melhoresClientes" width="700" height="400"></canvas></div>
+<div class="cointainer-fluid">
+    <div class="row">
+        <div class="col-md-5">
+            <h4 >Clientes que mais utilizaram o hotel</h4>
+            <div class="row">
+                <div><canvas id="melhoresClientes" width="400" height="400"></canvas></div>
+            </div>
+        </div>
+        <div class="col-md-7">
+            <h4>Total hóspedes por ano</h4>
+            <div class="row">
+                <div><canvas id="totalHospedesAno" width="600" height="400"></canvas></div>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+    <div class="row">
+        <div class="col-md-6">
+            <h4>Funcionários que fizeram mais locações / 6 meses</h4>
+            <div class="row" style="margin-left: -70px;">
+                <div><canvas id="funcionarioMaisLocacoesUltimosSeisMeses" width="600" height="400"></canvas></div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <h4>Faturamento produtos por mês</h4>
+            <div class="row">
+                <div><canvas id="faturamentoProdutoMes" width="600" height="400"></canvas></div>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+
+    <div class="row">
+        <div class="col-md-6">
+            <h4 style="text-align: center; width: 100%;">Faturamento 2019 por categoria de quarto</h4>
+            <div class="row">
+                <div><canvas id="faturamentoAnualCategoriaQuarto" width="400" height="400"></canvas></div>
+            </div>
+        </div>
+        <div class="col-md-6" style="padding-left: 100px; padding-top: 40px;">
+            <h2>Faturamento 2019</h2>
+            <div class="col-md-12">
+                <h4 style="margin-bottom: 0px;">Por quartos</h4>
+                <p style="width: 100%; font-size: 40px;">
+                    R$ {{vm.faturamentoAnualQuartos}},00
+                </p>
+            </div>
+            <div class="col-md-12">
+                <h4 style="margin-bottom: 0px;">Por produtos</h4>
+                <p style="width: 100%; font-size: 40px;">
+                    R$ {{vm.faturamentoProdutos}},00
+                </p>
+            </div>
+            <div class="col-md-12">
+                <h4 style="margin-bottom: 0px;">Total</h4>
+                <p style="width: 100%; font-size: 40px;">
+                    R$ {{vm.faturamentoTotal}},00
+                </p>
+            </div>
+        </div>
+    </div>
 </div>
-<!-- <div class="row">
-    <div><canvas id="totalHospedesAno"></canvas></div>
-</div>
-<div class="row">
-    <div><canvas id="funcionarioMaisLocacoesUltimosSeisMeses"></canvas></div>
-</div>
-<div class="row">
-    <div><canvas id="faturamentoProdutoMes"></canvas></div>
-</div>
-<div class="row">
-    <div><canvas id="faturamentoAnual"></canvas></div>
-</div>
-<div class="row">
-    <div><canvas id="faturamentoUltimosDozeMeses"></canvas></div>
-</div>
-<div class="row">
-    <div><canvas id="faturamentoAnualCategoriaQuarto"></canvas></div>
-</div> -->
-</div>
+<br><br>
