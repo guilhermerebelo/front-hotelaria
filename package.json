@@ -35,7 +35,7 @@
     "rimraf": "~2.5.4",
     "style-loader": "~0.13.1",
     "webpack": "~3.8.1",
-    "webpack-bundle-analyzer": "~2.9.2",
+    "webpack-bundle-analyzer": "~3.3.2",
     "webpack-dev-server": "2.9.7",
     "webpack-unused": "~0.1.0"
   },
