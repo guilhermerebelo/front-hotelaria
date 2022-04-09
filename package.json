@@ -44,7 +44,7 @@
     "angular-ui-bootstrap": "^2.5.6",
     "chart.js": "^2.9.3",
     "lodash": "~3.10",
-    "moment": "^2.21.0",
+    "moment": "^2.29.2",
     "restangular": "^1.6.1",
     "ui-select": "^0.19.8"
   },
